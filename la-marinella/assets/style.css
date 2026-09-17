@@ -1,0 +1,511 @@
+/* ============================================================
+   la marinella — Seaside Bistrot & Cocktail Bar
+   San Terenzo di Lerici — Golfo dei Poeti
+   Foglio di stile globale
+   ============================================================ */
+
+/* ---------- 1. Design tokens ---------- */
+:root{
+  /* Palette */
+  --abisso:#0A2733;        /* blu profondo — testi, fondali notturni */
+  --mare:#14566B;          /* blu mare — accenti, link */
+  --acqua:#8FBFC4;         /* azzurro chiaro — dettagli, hover */
+  --sabbia:#E4D7C3;        /* sabbia — superfici calde */
+  --sabbia-light:#F5EFE5;  /* sabbia chiara — sfondo pagina */
+  --corallo:#C4552F;       /* terracotta/corallo — CTA */
+  --corallo-scuro:#A5411F;
+  --oro:#BE9A4E;           /* oro caldo — tramonto, filetti */
+  --bianco:#FCFAF6;
+  --grigio:#6C7A80;
+
+  /* Tipografia */
+  --display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --testo:"Jost", "Helvetica Neue", Arial, sans-serif;
+
+  /* Misure */
+  --max:1240px;
+  --gutter:clamp(20px, 5vw, 64px);
+  --radius:2px;
+  --shadow:0 18px 50px -24px rgba(10,39,51,.45);
+  --nav-h:76px;
+}
+
+/* ---------- 2. Reset ---------- */
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--sabbia-light);
+  color:var(--abisso);
+  font-family:var(--testo);
+  font-weight:300;
+  font-size:17px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit;}
+input,select,textarea{font-family:inherit;font-size:16px;}
+
+/* ---------- 3. Tipografia ---------- */
+h1,h2,h3,h4{font-family:var(--display);font-weight:300;line-height:1.1;margin:0;letter-spacing:.005em;overflow-wrap:anywhere;}
+p,li,span,a{overflow-wrap:break-word;}
+h1{font-size:clamp(2.9rem,7.5vw,5.6rem);}
+h2{font-size:clamp(2.1rem,4.6vw,3.5rem);}
+h3{font-size:clamp(1.4rem,2.4vw,1.9rem);}
+p{margin:0 0 1.1em;}
+.eyebrow{
+  font-family:var(--testo);font-size:.72rem;font-weight:400;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--oro);
+  margin:0 0 1.1rem;display:block;
+}
+.eyebrow--chiaro{color:var(--acqua);}
+.lead{font-size:clamp(1.05rem,1.6vw,1.22rem);line-height:1.75;color:#31494f;}
+.firma{font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--mare);}
+
+/* ---------- 4. Layout ---------- */
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter);}
+.wrap--stretto{max-width:820px;}
+section{padding-block:clamp(72px,10vw,132px);}
+section[id],[id]{scroll-margin-top:90px;}
+.sezione--sabbia{background:var(--sabbia);}
+.sezione--scura{background:var(--abisso);color:var(--sabbia-light);}
+.sezione--scura .lead{color:#c3d3d6;}
+.sezione--scura h2{color:var(--bianco);}
+.griglia{display:grid;gap:clamp(28px,4vw,56px);}
+@media(min-width:900px){
+  .g-2{grid-template-columns:repeat(2,1fr);}
+  .g-3{grid-template-columns:repeat(3,1fr);}
+  .g-2-asim{grid-template-columns:1.05fr .95fr;align-items:center;}
+}
+@media(min-width:640px) and (max-width:899px){ .g-3{grid-template-columns:repeat(2,1fr);} }
+
+/* ---------- 5. Bottoni ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  padding:16px 34px;border-radius:var(--radius);
+  font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  transition:all .35s cubic-bezier(.2,.7,.3,1);white-space:nowrap;
+}
+.btn--primario{background:var(--corallo);color:#fff;}
+.btn--primario:hover{background:var(--corallo-scuro);transform:translateY(-2px);box-shadow:0 12px 28px -14px rgba(196,85,47,.9);}
+.btn--fantasma{border:1px solid currentColor;color:inherit;}
+.btn--fantasma:hover{background:currentColor;}
+.btn--fantasma:hover span{color:var(--abisso);}
+.btn--chiaro{border:1px solid rgba(252,250,246,.55);color:var(--bianco);}
+.btn--chiaro:hover{background:var(--bianco);color:var(--abisso);}
+.btn--wa{background:#1FA855;color:#fff;}
+.btn--wa:hover{background:#178643;transform:translateY(-2px);}
+.link-freccia{
+  display:inline-flex;align-items:center;gap:.55em;
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;
+  color:var(--mare);border-bottom:1px solid var(--acqua);padding-bottom:5px;
+  transition:gap .3s,border-color .3s;
+}
+.link-freccia:hover{gap:1.1em;border-color:var(--corallo);}
+
+/* ---------- 6. Navigazione ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;height:var(--nav-h);
+  padding-top:env(safe-area-inset-top,0px);box-sizing:content-box;
+  display:flex;align-items:center;
+  transition:background .4s,box-shadow .4s,height .4s;
+}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav__logo{position:relative;z-index:210;font-family:var(--display);font-size:1.6rem;letter-spacing:.06em;color:var(--bianco);line-height:1;}
+.nav__logo small{display:block;font-family:var(--testo);font-size:.53rem;letter-spacing:.34em;text-transform:uppercase;opacity:.8;margin-top:5px;}
+.nav__menu{display:flex;align-items:center;gap:clamp(18px,2.4vw,34px);}
+.nav__menu a{
+  font-size:.74rem;letter-spacing:.17em;text-transform:uppercase;color:var(--bianco);
+  opacity:.85;transition:opacity .25s;position:relative;padding-block:6px;
+}
+.nav__menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--oro);transition:width .3s;}
+.nav__menu a:hover,.nav__menu a[aria-current="page"]{opacity:1;}
+.nav__menu a:hover::after,.nav__menu a[aria-current="page"]::after{width:100%;}
+.nav__cta{padding:12px 24px;font-size:.7rem;}
+.nav--solid{background:rgba(10,39,51,.96);backdrop-filter:blur(12px);height:66px;box-shadow:0 1px 0 rgba(255,255,255,.08);}
+.nav--interna{background:rgba(10,39,51,.96);backdrop-filter:blur(12px);}
+.burger{display:none;width:30px;height:20px;position:relative;z-index:210;}
+.burger span{position:absolute;left:0;width:100%;height:1.5px;background:var(--bianco);transition:.35s;}
+.burger span:nth-child(1){top:0;} .burger span:nth-child(2){top:9px;} .burger span:nth-child(3){top:18px;}
+body.menu-open .burger span:nth-child(1){top:9px;transform:rotate(45deg);}
+body.menu-open .burger span:nth-child(2){opacity:0;}
+body.menu-open .burger span:nth-child(3){top:9px;transform:rotate(-45deg);}
+@media(max-width:1000px){
+  .burger{display:block;}
+  /* Niente backdrop-filter sul telefono: crea un blocco di contenimento e
+     il pannello a tutto schermo resterebbe imprigionato nella striscia del menu. */
+  .nav--solid,.nav--interna{backdrop-filter:none;background:rgba(10,39,51,.97);}
+  /* Pannello pieno: fondo compatto, voci allineate a sinistra e ben distanziate,
+     pagina bloccata sotto. Logo e pulsante di chiusura restano sopra al pannello. */
+  .nav__menu{
+    position:fixed;inset:0;z-index:200;
+    background:var(--abisso);
+    display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:0;
+    padding:calc(env(safe-area-inset-top,0px) + 104px) clamp(24px,7vw,48px)
+            calc(env(safe-area-inset-bottom,0px) + 40px);
+    overflow-y:auto;overscroll-behavior:contain;
+    transform:translateY(-100%);visibility:hidden;pointer-events:none;
+    transition:transform .45s cubic-bezier(.7,0,.3,1), visibility 0s linear .45s;
+  }
+  .nav__menu a{
+    font-size:1.12rem;letter-spacing:.18em;opacity:1;text-align:left;
+    padding:19px 2px;border-bottom:1px solid rgba(252,250,246,.13);
+  }
+  .nav__menu a::after{display:none;}
+  .nav__menu a[aria-current="page"]{color:var(--oro);}
+  .nav__cta{
+    margin-top:30px;padding:19px 24px;font-size:.78rem;
+    text-align:center;justify-content:center;border-bottom:0;
+  }
+  body.menu-open{overflow:hidden;}
+  body.menu-open .nav{background:var(--abisso);backdrop-filter:none;}
+  body.menu-open .nav__menu{
+    transform:translateY(0);visibility:visible;pointer-events:auto;
+    transition:transform .45s cubic-bezier(.7,0,.3,1), visibility 0s;
+  }
+}
+
+/* ---------- 7. Hero ---------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  color:var(--bianco);overflow:hidden;
+}
+.hero--interno{min-height:62svh;align-items:center;}
+.hero__sfondo{position:absolute;inset:0;z-index:0;}
+/* Scena "mare al tramonto" costruita in CSS: sostituibile con una foto reale */
+.scena{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(120% 80% at 72% 74%, rgba(190,154,78,.55) 0%, rgba(190,154,78,0) 55%),
+    radial-gradient(90% 60% at 78% 68%, rgba(196,85,47,.45) 0%, rgba(196,85,47,0) 60%),
+    linear-gradient(180deg,#0A2733 0%,#13485C 38%,#256A7C 58%,#7C8E86 76%,#C4713F 90%,#8F4526 100%);
+}
+.scena--notte{
+  background:
+    radial-gradient(100% 70% at 30% 20%, rgba(143,191,196,.28) 0%, rgba(143,191,196,0) 60%),
+    linear-gradient(180deg,#05161E 0%,#0A2733 45%,#14566B 100%);
+}
+.scena--giorno{
+  background:
+    radial-gradient(110% 70% at 60% 22%, rgba(255,245,220,.5) 0%, rgba(255,245,220,0) 55%),
+    linear-gradient(180deg,#5DA3B8 0%,#8FBFC4 42%,#CFE0DA 68%,#E4D7C3 100%);
+}
+.scena__sole{
+  position:absolute;left:72%;top:63%;width:clamp(90px,13vw,170px);aspect-ratio:1;
+  border-radius:50%;background:radial-gradient(circle,#FFE9B0 0%,#F2B25C 55%,rgba(242,178,92,0) 72%);
+  filter:blur(1px);opacity:.92;
+}
+.scena__riflesso{
+  position:absolute;left:62%;top:72%;width:clamp(120px,20vw,280px);height:30%;
+  background:radial-gradient(ellipse 50% 100% at 50% 0%, rgba(255,222,155,.55) 0%, rgba(255,205,130,.16) 45%, rgba(255,205,130,0) 100%);
+  filter:blur(22px);opacity:.85;
+}
+.scena__onde{position:absolute;inset:auto 0 0 0;height:46%;opacity:.5;}
+.scena__onde svg{width:100%;height:100%;}
+.hero__velo{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(10,39,51,.62) 0%,rgba(10,39,51,.15) 38%,rgba(10,39,51,.78) 100%);
+}
+.hero__contenuto{position:relative;z-index:2;padding-bottom:clamp(64px,9vw,118px);padding-top:calc(var(--nav-h) + 40px);width:100%;}
+.hero h1{max-width:15ch;text-shadow:0 2px 40px rgba(0,0,0,.35);}
+.hero h1 em{font-style:italic;color:var(--oro);}
+.hero__sub{max-width:46ch;font-size:clamp(1rem,1.5vw,1.16rem);color:#e8e2d6;margin-top:1.4rem;}
+.hero__azioni{display:flex;flex-wrap:wrap;gap:14px;margin-top:2.4rem;}
+.hero__scroll{
+  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;
+  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(252,250,246,.7);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.hero__scroll::after{content:"";width:1px;height:38px;background:linear-gradient(var(--oro),transparent);animation:scorri 2.4s infinite;}
+@keyframes scorri{0%{opacity:0;transform:scaleY(.2);transform-origin:top;}50%{opacity:1;}100%{opacity:0;transform:scaleY(1);transform-origin:bottom;}}
+.hero--interno h1{font-size:clamp(2.4rem,5.6vw,4.2rem);}
+.hero--interno .hero__contenuto{padding-block:clamp(90px,12vw,140px);}
+
+
+/* ---------- 7b. Immagine di sfondo della hero ---------- */
+/* Se il file non esiste ancora, l'<img> si rimuove da sola (onerror)
+   e resta visibile la scena in CSS: il sito non si rompe mai. */
+.hero__img{
+  position:absolute;inset:0;z-index:0;
+  width:100%;height:100%;object-fit:cover;object-position:center;
+}
+.hero__img + .hero__velo,
+.hero__sfondo:has(.hero__img) + .hero__velo{
+  background:linear-gradient(180deg,rgba(10,39,51,.72) 0%,rgba(10,39,51,.28) 40%,rgba(10,39,51,.82) 100%);
+}
+
+/* ---------- 7c. Video di sfondo della hero ---------- */
+/* Il sorgente è girato in verticale (9:16): sul telefono riempie
+   lo schermo, sul desktop viene ritagliato al centro. */
+.hero__video{
+  position:absolute;inset:0;z-index:1;
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  background:var(--abisso);
+}
+/* Su schermi larghi il video viene ingrandito molto oltre la sua
+   risoluzione nativa: una sfocatura minima nasconde la sgranatura
+   e legge come profondità di campo, non come difetto. */
+@media(min-width:900px){
+  .hero__video{filter:blur(1px) saturate(1.05) contrast(1.02);transform:scale(1.02);}
+}
+/* Con il video attivo serve un velo un po' più denso per tenere
+   leggibile il titolo su qualsiasi fotogramma. */
+.hero__sfondo:has(.hero__video) + .hero__velo{
+  background:linear-gradient(180deg,rgba(10,39,51,.68) 0%,rgba(10,39,51,.34) 42%,rgba(10,39,51,.86) 100%);
+}
+@media(prefers-reduced-motion:reduce){
+  .hero__video{filter:none;transform:none;}
+}
+
+/* ---------- 8. Slot fotografici ---------- */
+/* .foto = contenitore per le immagini reali. Sostituire il background
+   con <img src="..."> mantenendo la classe per proporzioni e ombra.      */
+.foto{
+  position:relative;overflow:hidden;border-radius:var(--radius);
+  background:linear-gradient(145deg,#1D5D72 0%,#8FBFC4 48%,#E4D7C3 100%);
+  box-shadow:var(--shadow);aspect-ratio:4/3;
+}
+.foto img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2;}
+/* L'etichetta del riquadro sparisce solo quando l'immagine è davvero comparsa. */
+.foto img:not(.caricata){animation:comparsa .35s ease both;}
+@keyframes comparsa{from{opacity:0}to{opacity:1}}
+.foto::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
+}
+.foto--alta{aspect-ratio:3/4;}
+.foto--larga{aspect-ratio:16/9;}
+.foto--quadra{aspect-ratio:1;}
+.foto--tramonto{background:linear-gradient(160deg,#14566B 0%,#C4713F 62%,#BE9A4E 100%);}
+.foto--notte{background:linear-gradient(160deg,#05161E 0%,#14566B 70%,#8FBFC4 100%);}
+.foto--sabbia{background:linear-gradient(150deg,#E4D7C3 0%,#C9B392 60%,#8FBFC4 100%);}
+.foto::after{
+  content:attr(data-nota);
+  position:absolute;left:0;right:0;bottom:0;padding:14px 18px;
+  font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(252,250,246,.92);background:linear-gradient(transparent,rgba(10,39,51,.72));
+}
+
+/* Un video può stare in uno slot .foto esattamente come un'immagine. */
+.foto video{
+  width:100%;height:100%;object-fit:cover;display:block;
+  position:relative;z-index:2;
+}
+.foto:has(video)::after,.foto:has(video)::before{content:none;}
+.foto:has(img.caricata)::after{content:none;}
+.foto:has(img.caricata)::before{content:none;}
+
+/* ---------- 9. Card ---------- */
+.card{
+  background:var(--bianco);border-radius:var(--radius);overflow:hidden;
+  box-shadow:0 14px 40px -28px rgba(10,39,51,.6);
+  display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 26px 60px -30px rgba(10,39,51,.6);}
+.card__corpo{padding:30px 28px 34px;flex:1;}
+.card__corpo h3{margin-bottom:.5rem;}
+.card__corpo p{font-size:.95rem;color:#4a5f65;}
+.card .foto{border-radius:0;box-shadow:none;}
+
+/* ---------- 10. Menu ---------- */
+.menu-filtri{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:54px;}
+.filtro{
+  padding:11px 22px;border:1px solid rgba(20,86,107,.3);border-radius:999px;
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mare);
+  transition:.3s;
+}
+.filtro:hover{border-color:var(--mare);}
+.filtro.attivo{background:var(--abisso);border-color:var(--abisso);color:var(--bianco);}
+.portata{
+  display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+  padding:20px 0;border-bottom:1px solid rgba(20,86,107,.14);
+}
+.portata__nome{font-family:var(--display);font-size:1.32rem;line-height:1.25;}
+.portata__desc{font-size:.9rem;color:#5b6d72;margin:.3rem 0 0;max-width:62ch;}
+.portata__prezzo{font-family:var(--display);font-size:1.28rem;color:var(--corallo);white-space:nowrap;}
+.tag{
+  display:inline-block;margin-left:8px;padding:3px 9px;border-radius:999px;
+  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  background:rgba(143,191,196,.28);color:var(--mare);vertical-align:middle;
+}
+.tag--veg{background:rgba(122,168,110,.22);color:#4A6B3F;}
+.tag--top{background:rgba(190,154,78,.25);color:#8A6E28;}
+.menu-blocco{margin-bottom:64px;}
+.menu-blocco h3{
+  padding-bottom:14px;margin-bottom:8px;border-bottom:1px solid var(--oro);
+  display:flex;align-items:baseline;justify-content:space-between;
+}
+.menu-blocco h3 span{font-family:var(--testo);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--grigio);}
+
+/* ---------- 11. Recensioni ---------- */
+.recensione{padding:34px 30px;background:var(--bianco);border-radius:var(--radius);border-top:2px solid var(--oro);}
+.recensione p{font-family:var(--display);font-size:1.18rem;font-style:italic;line-height:1.6;color:#22434d;}
+.recensione footer{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grigio);margin-top:16px;}
+.stelle{color:var(--oro);letter-spacing:.2em;font-size:.95rem;margin-bottom:14px;}
+.punteggi{display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,64px);justify-content:center;margin-top:56px;}
+.punteggio{text-align:center;}
+.punteggio strong{display:block;font-family:var(--display);font-size:2.9rem;color:var(--oro);line-height:1;}
+.punteggio span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grigio);}
+
+/* ---------- 12. Instagram ---------- */
+.ig-griglia{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+@media(min-width:700px){.ig-griglia{grid-template-columns:repeat(4,1fr);}}
+.ig-griglia .foto{aspect-ratio:1;border-radius:var(--radius);}
+
+/* ---------- 13. Form prenotazione ---------- */
+.form-prenota{background:var(--bianco);padding:clamp(28px,4vw,46px);border-radius:var(--radius);box-shadow:var(--shadow);}
+.campo{margin-bottom:20px;}
+.campo label{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mare);margin-bottom:8px;}
+.campo input,.campo select,.campo textarea{
+  width:100%;padding:14px 16px;border:1px solid rgba(20,86,107,.25);
+  border-radius:var(--radius);background:#fff;color:var(--abisso);transition:border-color .25s,box-shadow .25s;
+}
+.campo input:focus,.campo select:focus,.campo textarea:focus{
+  outline:none;border-color:var(--mare);box-shadow:0 0 0 3px rgba(143,191,196,.3);
+}
+.campo textarea{min-height:96px;resize:vertical;}
+/* Data in tre tendine: nessuna ambiguità tra formato italiano e inglese. */
+.campo-data{display:grid;grid-template-columns:4.4em minmax(0,1fr) 5.4em;gap:6px;}
+.campo-data select{width:100%;padding-inline:8px;text-overflow:ellipsis;}
+.errore-data{margin:8px 0 0;font-size:.8rem;color:var(--corallo);}
+.campo-riga{display:grid;gap:20px;}
+@media(min-width:620px){.campo-riga{grid-template-columns:1fr 1fr;}}
+.scelta-area{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+.scelta-area{position:relative;}
+.scelta-area input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none;}
+.scelta-area label{
+  display:block;padding:14px 12px;text-align:center;cursor:pointer;
+  border:1px solid rgba(20,86,107,.25);border-radius:var(--radius);
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mare);
+  margin:0;transition:.25s;
+}
+.scelta-area input:checked + label{background:var(--abisso);border-color:var(--abisso);color:var(--bianco);}
+.privacy{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:#5b6d72;margin-bottom:22px;}
+.privacy input{width:auto;margin-top:5px;}
+.nota-form{font-size:.8rem;color:var(--grigio);margin-top:18px;line-height:1.6;}
+
+/* ---------- 14. Banda CTA ---------- */
+.banda{position:relative;overflow:hidden;color:var(--bianco);text-align:center;padding-block:clamp(80px,11vw,140px);}
+.banda .scena{position:absolute;inset:0;z-index:0;}
+.banda__velo{position:absolute;inset:0;background:rgba(10,39,51,.55);z-index:1;}
+.banda .wrap{position:relative;z-index:2;}
+
+/* ---------- 15. Info / orari ---------- */
+.info-lista{list-style:none;margin:0;padding:0;}
+.info-lista li{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid rgba(20,86,107,.14);font-size:.95rem;}
+.info-lista li span:first-child{color:var(--grigio);}
+.sezione--scura .info-lista li{border-color:rgba(252,250,246,.14);}
+.sezione--scura .info-lista li span:first-child{color:var(--acqua);}
+
+/* ---------- 16. Footer ---------- */
+.footer{background:var(--abisso);color:#c9d6d9;padding-top:clamp(64px,8vw,96px);font-size:.92rem;}
+.footer a:hover{color:var(--oro);}
+.footer h4{font-family:var(--testo);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--oro);margin-bottom:18px;font-weight:500;}
+.footer__griglia{display:grid;gap:44px;}
+@media(min-width:860px){.footer__griglia{grid-template-columns:1.4fr 1fr 1fr 1.2fr;}}
+.footer__logo{font-family:var(--display);font-size:2rem;color:var(--bianco);line-height:1;margin-bottom:14px;}
+.footer__logo small{display:block;font-family:var(--testo);font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;opacity:.75;margin-top:7px;}
+.footer ul{list-style:none;margin:0;padding:0;}
+.footer li{margin-bottom:9px;}
+.mappa{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(252,250,246,.15);height:190px;}
+.mappa iframe{width:100%;height:100%;border:0;filter:grayscale(.3) brightness(.92);}
+.social{display:flex;gap:14px;margin-top:18px;}
+.social a{
+  width:40px;height:40px;border:1px solid rgba(252,250,246,.25);border-radius:50%;
+  display:grid;place-items:center;transition:.3s;
+}
+.social a:hover{background:var(--oro);border-color:var(--oro);color:var(--abisso);}
+.social svg{width:17px;height:17px;}
+.footer__coda{
+  margin-top:clamp(48px,6vw,72px);padding:24px 0;border-top:1px solid rgba(252,250,246,.13);
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
+  font-size:.76rem;color:#8ba1a7;
+}
+.footer__coda nav{display:flex;gap:20px;flex-wrap:wrap;}
+
+/* ---------- 17. Barra mobile ---------- */
+.barra-mobile{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;
+  background:rgba(10,39,51,.97);backdrop-filter:blur(10px);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;
+}
+.barra-mobile .btn{flex:1.3;padding:14px 10px;font-size:.68rem;}
+.barra-mobile__icona{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  padding:9px 6px;border:1px solid rgba(252,250,246,.28);border-radius:var(--radius);
+  color:var(--bianco);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
+  transition:border-color .25s,color .25s;
+}
+.barra-mobile__icona:hover,.barra-mobile__icona[aria-current="page"]{
+  border-color:var(--oro);color:var(--oro);
+}
+@media(max-width:740px){ .barra-mobile{display:flex;} body{padding-bottom:78px;} }
+
+/* ---------- 18. Animazioni d'ingresso ---------- */
+.rivela{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1);}
+.rivela.visibile{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){
+  .rivela{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+  .hero__scroll::after{animation:none;}
+}
+
+/* ---------- 19. Utility ---------- */
+.centro{text-align:center;}
+.mt-1{margin-top:1rem;} .mt-2{margin-top:2rem;} .mt-3{margin-top:3rem;}
+.mb-0{margin-bottom:0;}
+.filetto{width:58px;height:1px;background:var(--oro);margin:26px 0;}
+.centro .filetto{margin-inline:auto;}
+.nascosto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+
+/* ---------- 20. Rifiniture emerse dal collaudo ---------- */
+
+/* Schermi molto stretti (320px): i pulsanti non devono sbordare.
+   A pieno larghezza si toccano anche meglio. */
+@media(max-width:430px){
+  .btn{
+    padding:15px 20px;font-size:.72rem;letter-spacing:.13em;
+    white-space:normal;text-align:center;
+  }
+  .hero__azioni{width:100%;}
+  .hero__azioni .btn{width:100%;}
+  .banda .hero__azioni .btn{width:100%;}
+}
+
+/* Bersagli da toccare: sotto i 44px il dito sbaglia.
+   Allargo l'area sensibile senza spostare quello che si vede. */
+.burger{
+  width:44px;height:44px;margin-right:-7px;
+  display:none;place-items:center;
+}
+@media(max-width:1000px){ .burger{display:grid;} }
+.burger span{left:7px;width:30px;}
+.burger span:nth-child(1){top:12px;}
+.burger span:nth-child(2){top:21px;}
+.burger span:nth-child(3){top:30px;}
+body.menu-open .burger span:nth-child(1){top:21px;}
+body.menu-open .burger span:nth-child(3){top:21px;}
+
+.nav__logo{display:inline-block;padding-block:4px;}
+
+/* Filtri del menu e link in linea: un po' più alti sotto il dito */
+.filtro{padding:14px 22px;}
+.link-freccia{padding-block:12px 10px;}
+.footer li a,.footer__coda nav a{display:inline-block;padding-block:11px;}
+.footer li{margin-bottom:2px;}
+
+/* Le caselle di spunta erano da 13px: impossibili da centrare */
+.privacy{align-items:center;gap:12px;padding-block:6px;}
+.privacy input[type="checkbox"]{
+  width:22px;height:22px;margin:0;flex:0 0 auto;accent-color:var(--corallo);
+}
+.nota-form a{display:inline-block;padding-block:6px;}
+
+/* I contatti in elenco non sono testo in mezzo a una frase:
+   meritano un'area sensibile piena. */
+.info-lista a{display:inline-block;padding-block:9px;}
+.info-lista li{padding-block:6px;}

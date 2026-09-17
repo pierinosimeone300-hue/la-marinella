@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il Menu — Ristorante di pesce a San Terenzo di Lerici | la marinella</title>
+<meta name="description" content="Menu della marinella: crudi di mare, pesto ligure, pescato del giorno, focacce e insalatone per il pranzo leggero. Ristorante di pesce a San Terenzo di Lerici, Golfo dei Poeti.">
+<meta name="author" content="la marinella — San Terenzo di Lerici">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.lamarinella.it/menu.html">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="la marinella | Seaside Bistrot &amp; Cocktail Bar">
+<meta property="og:title" content="Il Menu — Ristorante di pesce a San Terenzo di Lerici | la marinella">
+<meta property="og:description" content="Menu della marinella: crudi di mare, pesto ligure, pescato del giorno, focacce e insalatone per il pranzo leggero. Ristorante di pesce a San Terenzo di Lerici, Golfo dei Poeti.">
+<meta property="og:url" content="https://www.lamarinella.it/menu.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Tipografia -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/pasta-del-mare.jpg" fetchpriority="high">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A2733'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='Georgia,serif' fill='%23BE9A4E'>m</text></svg>">
+</head>
+<body>
+<header class="nav nav--interna">
+  <div class="wrap nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="la marinella — torna alla home">la marinella<small>San Terenzo · Lerici</small></a>
+    <nav class="nav__menu" aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="location.html">La Location</a>
+      <a href="menu.html" aria-current="page">Il Menu</a>
+      <a href="aperitivi.html">Aperitivi & Lounge</a>
+      <a href="eventi.html">Eventi</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="https://wa.me/393516420126?text=Buongiorno%20la%20marinella%2C%20vorrei%20prenotare%20un%20tavolo." target="_blank" rel="noopener" class="btn btn--primario nav__cta">Prenota un tavolo</a>
+    </nav>
+    <button class="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero hero--interno">
+  <div class="hero__sfondo"><div class="scena"><div class="scena__onde"><svg viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+<path fill="rgba(252,250,246,.28)" d="M0,192L60,197C120,203,240,213,360,202.7C480,192,600,160,720,165.3C840,171,960,213,1080,218.7C1200,224,1320,192,1380,176L1440,160L1440,320L0,320Z"></path>
+<path fill="rgba(252,250,246,.18)" d="M0,256L80,245.3C160,235,320,213,480,218.7C640,224,800,256,960,256C1120,256,1280,224,1360,208L1440,192L1440,320L0,320Z"></path>
+</svg></div></div></div>
+  <img class="hero__img" src="assets/img/pasta-del-mare.jpg" alt="Spaghettone del mare con gamberi crudi e germogli" fetchpriority="high" decoding="async" onerror="this.remove()">
+  <div class="hero__velo"></div>
+  <div class="wrap hero__contenuto">
+    <span class="eyebrow eyebrow--chiaro">Il ristorante</span>
+    <h1>Il menu</h1>
+    <p class="hero__sub">Pescato del giorno, pesto al mortaio e cucina ligure.
+    La carta cambia con le stagioni e con quello che arriva dalla barca.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wrap--stretto">
+    <div class="menu-filtri rivela">
+      <button class="filtro attivo" data-filtro="tutto">Tutto il menu</button>
+      <button class="filtro" data-filtro="pesce">Pesce</button>
+      <button class="filtro" data-filtro="carne">Carne</button>
+      <button class="filtro" data-filtro="veg">Vegetariano</button>
+      <button class="filtro" data-filtro="pranzo">Pranzo leggero</button>
+      <button class="filtro" data-filtro="dolci">Dolci</button>
+    </div>
+
+    <div class="menu-blocco rivela">
+      <h3>Dal mare, crudo <span>antipasti</span></h3>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Gran crudo della marinella <span class="tag tag--top">Il più richiesto</span></div>
+          <p class="portata__desc">Gamberi rosa, scampi, ricciola, ostriche del giorno. Olio taggiasco, lime, ghiaccio.</p>
+        </div>
+        <div class="portata__prezzo">38</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Tartare di tonno rosso</div>
+          <p class="portata__desc">Con capperi di Pantelleria, cipolla di Tropea e crema di avocado.</p>
+        </div>
+        <div class="portata__prezzo">22</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Ostriche</div>
+          <p class="portata__desc">Selezione francese, tre pezzi. Limone e scalogno all'aceto.</p>
+        </div>
+        <div class="portata__prezzo">18</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Carpaccio di gambero rosso</div>
+          <p class="portata__desc">Bottarga, scorza di limone di costiera, fior di sale.</p>
+        </div>
+        <div class="portata__prezzo">24</div>
+      </div>
+    </div>
+    <div class="menu-blocco rivela">
+      <h3>Antipasti caldi <span>di terra e di mare</span></h3>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Acciughe del golfo fritte</div>
+          <p class="portata__desc">Farina di semola, limone, maionese al basilico.</p>
+        </div>
+        <div class="portata__prezzo">16</div>
+      </div>
+      <div class="portata" data-tag="terra veg">
+        <div>
+          <div class="portata__nome">Focaccia di Recco <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Formaggio fresco, cotta al momento. Da dividere.</p>
+        </div>
+        <div class="portata__prezzo">14</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Polpo arrostito</div>
+          <p class="portata__desc">Patate di montagna, olive taggiasche, salsa al prezzemolo.</p>
+        </div>
+        <div class="portata__prezzo">20</div>
+      </div>
+      <div class="portata" data-tag="terra veg">
+        <div>
+          <div class="portata__nome">Verdure ripiene alla ligure <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Zucchine trombetta, cipolle, maggiorana e pinoli.</p>
+        </div>
+        <div class="portata__prezzo">13</div>
+      </div>
+    </div>
+    <div class="menu-blocco rivela">
+      <h3>Primi <span>pasta fresca e risotti</span></h3>
+      <div class="portata" data-tag="terra veg">
+        <div>
+          <div class="portata__nome">Trofie al pesto di Prà <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Basilico al mortaio, patate e fagiolini. Come si deve.</p>
+        </div>
+        <div class="portata__prezzo">16</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Spaghettone ai frutti di mare <span class="tag tag--top">Il più richiesto</span></div>
+          <p class="portata__desc">Vongole veraci, cozze, telline, aglio e vino bianco.</p>
+        </div>
+        <div class="portata__prezzo">24</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Trenette allo scoglio del giorno</div>
+          <p class="portata__desc">Con il pescato della mattina e pomodorino del piennolo.</p>
+        </div>
+        <div class="portata__prezzo">26</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Risotto agli scampi e limone</div>
+          <p class="portata__desc">Mantecato all'olio, scorza di limone, erba cipollina.</p>
+        </div>
+        <div class="portata__prezzo">26</div>
+      </div>
+      <div class="portata" data-tag="terra veg">
+        <div>
+          <div class="portata__nome">Pansoti alla salsa di noci <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Ripieno di erbette liguri, salsa di noci del ponente.</p>
+        </div>
+        <div class="portata__prezzo">17</div>
+      </div>
+    </div>
+    <div class="menu-blocco rivela">
+      <h3>Secondi <span>il pescato del giorno</span></h3>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Pescato del giorno alla griglia <span class="tag tag--top">Il più richiesto</span></div>
+          <p class="portata__desc">Scritto a mano sulla lavagna. Servito intero, al peso.</p>
+        </div>
+        <div class="portata__prezzo">€/etto</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Branzino al sale</div>
+          <p class="portata__desc">Cotto in crosta, sfilettato al tavolo. Per due persone.</p>
+        </div>
+        <div class="portata__prezzo">46</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Fritto misto della marinella</div>
+          <p class="portata__desc">Calamari, gamberi, acciughe e verdure dell'orto.</p>
+        </div>
+        <div class="portata__prezzo">26</div>
+      </div>
+      <div class="portata" data-tag="mare pesce">
+        <div>
+          <div class="portata__nome">Baccalà in umido alla ligure</div>
+          <p class="portata__desc">Olive taggiasche, pinoli, patate e pomodoro.</p>
+        </div>
+        <div class="portata__prezzo">24</div>
+      </div>
+      <div class="portata" data-tag="terra carne">
+        <div>
+          <div class="portata__nome">Tagliata di manzo</div>
+          <p class="portata__desc">Rucola, scaglie e riduzione al rosso di Luni.</p>
+        </div>
+        <div class="portata__prezzo">26</div>
+      </div>
+    </div>
+    <div class="menu-blocco rivela">
+      <h3>Il pranzo leggero <span>piatti freddi e insalatone</span></h3>
+      <div class="portata" data-tag="pranzo mare">
+        <div>
+          <div class="portata__nome">Insalatona del golfo</div>
+          <p class="portata__desc">Tonno scottato, fagiolini, patate, olive, uovo.</p>
+        </div>
+        <div class="portata__prezzo">16</div>
+      </div>
+      <div class="portata" data-tag="pranzo terra veg">
+        <div>
+          <div class="portata__nome">Insalatona dell'orto <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Verdure di stagione, mozzarella di bufala, pinoli tostati.</p>
+        </div>
+        <div class="portata__prezzo">14</div>
+      </div>
+      <div class="portata" data-tag="pranzo terra">
+        <div>
+          <div class="portata__nome">Focaccia farcita</div>
+          <p class="portata__desc">Prosciutto crudo e stracciatella, oppure verdure grigliate.</p>
+        </div>
+        <div class="portata__prezzo">12</div>
+      </div>
+      <div class="portata" data-tag="pranzo mare pesce">
+        <div>
+          <div class="portata__nome">Piatto freddo di mare</div>
+          <p class="portata__desc">Polpo, gamberi, insalata di seppie. Leggero e fresco.</p>
+        </div>
+        <div class="portata__prezzo">20</div>
+      </div>
+      <div class="portata" data-tag="pranzo terra carne">
+        <div>
+          <div class="portata__nome">Club sandwich marinella</div>
+          <p class="portata__desc">Pollo grigliato, bacon, uovo, patatine.</p>
+        </div>
+        <div class="portata__prezzo">15</div>
+      </div>
+    </div>
+    <div class="menu-blocco rivela">
+      <h3>Dolci <span>fatti in casa</span></h3>
+      <div class="portata" data-tag="dolci veg">
+        <div>
+          <div class="portata__nome">Torta di limone e mandorle <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Con gelato al basilico.</p>
+        </div>
+        <div class="portata__prezzo">9</div>
+      </div>
+      <div class="portata" data-tag="dolci veg">
+        <div>
+          <div class="portata__nome">Tiramisù della casa <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Servito al cucchiaio, in coppa.</p>
+        </div>
+        <div class="portata__prezzo">8</div>
+      </div>
+      <div class="portata" data-tag="dolci veg">
+        <div>
+          <div class="portata__nome">Sorbetto al limone di costiera <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Con un filo di prosecco.</p>
+        </div>
+        <div class="portata__prezzo">7</div>
+      </div>
+      <div class="portata" data-tag="dolci veg">
+        <div>
+          <div class="portata__nome">Semifreddo al pinolo <span class="tag tag--veg">Veg</span></div>
+          <p class="portata__desc">Miele di castagno e sale di Sicilia.</p>
+        </div>
+        <div class="portata__prezzo">9</div>
+      </div>
+    </div>
+
+
+    <div class="nota-form rivela" style="border-top:1px solid rgba(20,86,107,.2);padding-top:22px">
+      <p><strong>Allergeni e intolleranze:</strong> comunicalo al personale in fase di ordinazione o
+      indicalo nella prenotazione: adattiamo quasi tutti i piatti.</p>
+      <p>Alcuni prodotti ittici destinati al consumo crudo sono sottoposti ad abbattimento rapido
+      di temperatura come da Reg. CE 853/2004. In mancanza di prodotto fresco può essere utilizzato
+      prodotto congelato o surgelato all'origine.</p>
+      <p>Coperto € 3 a persona. I prezzi sono indicativi e possono variare con la stagionalità del pescato.</p>
+    </div>
+
+    <div class="centro mt-3 rivela">
+      <a href="https://wa.me/393516420126?text=Buongiorno%20la%20marinella%2C%20vorrei%20prenotare%20un%20tavolo." target="_blank" rel="noopener" class="btn btn--primario">Prenota un tavolo</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== IL PESTO ===================== -->
+<section class="sezione--scura">
+  <div class="wrap griglia g-2-asim">
+    <div class="rivela">
+      <span class="eyebrow eyebrow--chiaro">La scelta del prodotto</span>
+      <h2>La scelta del prodotto<br>comincia a monte</h2>
+      <div class="filetto"></div>
+      <p class="lead">Non c'è un fornitore che scarica il pesto in cucina. C'è una cassetta di basilico
+      che qualcuno porta giù a mano lungo la passeggiata, e un mortaio di marmo che gira finché non è pronto.</p>
+      <p>Pinoli, aglio, pecorino, un olio che sa di taggiasca. Il pesto si fa al momento, in
+      quantità piccole, perché dopo mezz'ora non è più la stessa cosa. È il motivo per cui certe
+      sere finisce — e preferiamo dirlo piuttosto che servirne uno qualsiasi.</p>
+      <a href="#" class="link-freccia mt-1" style="color:var(--oro);border-color:rgba(190,154,78,.5)">
+        Trofie, trenette o pansoti: scegli tu →</a>
+    </div>
+    <div class="rivela">
+      <div class="foto foto--alta"><video muted loop playsinline preload="metadata" poster="assets/video/pesto-poster.jpg" aria-label="Il pesto lavorato al mortaio alla marinella" disablepictureinpicture onerror="this.remove()"><source src="assets/video/pesto.mp4" type="video/mp4"></video></div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione--sabbia">
+  <div class="wrap griglia g-2-asim">
+    <div class="rivela">
+      <span class="eyebrow">La cantina</span>
+      <h2>Vini di questo mare,<br>e qualche buona eccezione</h2>
+      <div class="filetto"></div>
+      <p class="lead">Una carta corta e ragionata: Vermentino dei Colli di Luni, Sciacchetrà delle
+      Cinque Terre, Pigato del ponente ligure. Accanto, bollicine italiane e francesi e qualche
+      rosso leggero, perché anche il pesce a volte lo chiede.</p>
+      <ul class="info-lista">
+        <li><span>Al calice</span><span>da € 6</span></li>
+        <li><span>Bianchi liguri</span><span>oltre 20 etichette</span></li>
+        <li><span>Bollicine</span><span>selezione franciacorta e champagne</span></li>
+      </ul>
+    </div>
+    <div class="rivela"><div class="foto foto--notte"><video muted loop playsinline preload="metadata" poster="assets/video/vendemmia-poster.jpg" aria-label="La vendemmia dei vini della casa" disablepictureinpicture onerror="this.remove()"><source src="assets/video/vendemmia.mp4" type="video/mp4"></video></div></div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="wrap footer__griglia">
+    <div>
+      <div class="footer__logo">la marinella<small>Seaside Bistrot · Cocktail Bar</small></div>
+      <p style="max-width:34ch">Sulla spiaggia della Marinella, oltre il castello di San Terenzo, dove il Golfo dei Poeti si guarda allo specchio.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/lamarinella_golfodeipoeti/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/search/top?q=la%20marinella%20san%20terenzo" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6c-.29-.04-1.27-.13-2.41-.13-2.38 0-4.01 1.45-4.01 4.13v2.3H7.5V14h2.78v8z"/></svg>
+        </a>
+        <a href="https://wa.me/393516420126" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.05L2 22l5.1-1.33A10 10 0 1012 2zm0 18.1a8.1 8.1 0 01-4.12-1.13l-.3-.18-3.03.79.81-2.95-.19-.3A8.1 8.1 0 1112 20.1zm4.45-6.06c-.24-.12-1.44-.71-1.66-.79s-.39-.12-.55.12-.63.79-.77.95-.28.18-.52.06a6.63 6.63 0 01-1.95-1.2 7.3 7.3 0 01-1.35-1.68c-.14-.24 0-.37.11-.49s.24-.28.36-.42a1.6 1.6 0 00.24-.4.44.44 0 000-.42c-.06-.12-.55-1.32-.75-1.81s-.4-.41-.55-.42h-.47a.9.9 0 00-.65.3 2.72 2.72 0 00-.85 2.03 4.74 4.74 0 001 2.5 10.85 10.85 0 004.15 3.67 13.9 13.9 0 001.39.51 3.33 3.33 0 001.53.1 2.5 2.5 0 001.64-1.16 2.03 2.03 0 00.14-1.16c-.06-.1-.22-.16-.46-.28z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Dove siamo</h4>
+      <ul>
+        <li>Spiaggia della Marinella</li>
+        <li>Via Meneghetti, snc</li>
+        <li>19032 San Terenzo di Lerici (SP)</li>
+        <li class="mt-1"><a href="https://www.google.com/maps/search/?api=1&query=Spiaggia+della+Marinella+San+Terenzo+Lerici" target="_blank" rel="noopener" class="link-freccia" style="color:var(--oro);border-color:rgba(190,154,78,.5)">Indicazioni stradali →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Orari</h4>
+      <ul>
+        <li>Lun — Dom</li>
+        <li>11:00 — 23:30</li>
+        <li class="mt-1">Cucina pranzo 12:00—15:00</li>
+        <li>Aperitivo 18:00—20:30</li>
+        <li>Cucina cena 19:30—22:30</li>
+        <li class="mt-1" style="opacity:.7">Stagionalità e chiusure:<br>verificare sui canali social.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contatti</h4>
+      <ul>
+        <li><a href="tel:+393516420126">+39 351 642 0126</a></li>
+        <li><a href="mailto:info@lamarinella.it">info@lamarinella.it</a></li>
+        <li><a href="https://www.instagram.com/lamarinella_golfodeipoeti/" target="_blank" rel="noopener">@lamarinella_golfodeipoeti</a></li>
+      </ul>
+      <div class="mappa mt-2">
+        <iframe src="https://www.google.com/maps?q=Spiaggia+della+Marinella,+San+Terenzo,+Lerici+SP&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mappa — la marinella, San Terenzo di Lerici"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer__coda">
+      <span>© <span data-anno></span> la marinella — Seaside Bistrot &amp; Cocktail Bar · P.IVA 00000000000</span>
+      <nav>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Note legali</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<div class="barra-mobile">
+  <a href="index.html" class="barra-mobile__icona" aria-label="Torna alla home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" style="width:17px;height:17px"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <a href="tel:+393516420126" class="barra-mobile__icona" aria-label="Chiama la marinella"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:16px;height:16px"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span>Chiama</span></a>
+  <a href="https://wa.me/393516420126?text=Buongiorno%20la%20marinella%2C%20vorrei%20prenotare%20un%20tavolo." target="_blank" rel="noopener" class="btn btn--primario">Prenota</a>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

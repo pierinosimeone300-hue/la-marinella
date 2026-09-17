@@ -1,0 +1,15 @@
+# sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editor
+.vscode/
+.idea/
+*.swp
+
+# file di lavoro
+*.psd
+*.ai
+originali/
+_bozze/
