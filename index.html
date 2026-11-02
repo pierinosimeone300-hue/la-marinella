@@ -44,7 +44,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a,button{-webkit-tap-highlight-color:transparent}
 a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1px}
 a:hover{text-decoration-color:var(--coral)}
-h1,h2,h3{font-weight:400;margin:0;line-height:1.15;text-wrap:balance}
+h1,h2,h3{font-weight:400;margin:0;line-height:1.15;text-wrap:balance;-webkit-text-stroke:.035em currentColor;paint-order:stroke fill}
 h2{font-size:clamp(1.65rem,2.4vw,2rem)}
 h3{font-size:clamp(1.4rem,1.9vw,1.65rem)}
 p{margin:0}
@@ -65,7 +65,10 @@ svg.logo{display:block;fill:currentColor}
 .brand .wm{width:150px;height:auto;transition:width .35s}
 #top.solid .brand .wm{width:128px}
 .bar-r{display:flex;justify-content:flex-end}
-.bar-r a{font-size:.98rem}
+.bar-r a,.btn-book{display:inline-flex;align-items:center;justify-content:center;font-size:.95rem;text-decoration:none;background:var(--coral);color:#fff;
+  padding:10px 20px;border-radius:999px;box-shadow:0 2px 10px rgba(243,94,111,.28);transition:transform .25s ease, box-shadow .25s ease, background-color .25s ease}
+.bar-r a:hover,.btn-book:hover{background:#E84E60;transform:translateY(-1px);box-shadow:0 6px 18px rgba(243,94,111,.36);text-decoration:none}
+.bar-r a:active,.btn-book:active{transform:none}
 .mob-book{display:none}
 @media (max-width:760px){
   :root{--hdr:66px}
@@ -74,12 +77,13 @@ svg.logo{display:block;fill:currentColor}
   .brand{justify-self:center}
   .brand .wm{width:122px}
   #top.solid .brand .wm{width:112px}
-  .mob-book{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;justify-content:center;align-items:center;background:var(--bg);color:var(--ink);padding:14px var(--side-r) calc(14px + env(safe-area-inset-bottom,0px)) var(--side-l);border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
-  body{padding-bottom:58px}
+  .mob-book{display:flex;position:fixed;left:max(14px,env(safe-area-inset-left,0px));right:max(14px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;justify-content:center;align-items:center;background:var(--coral);color:#fff;text-decoration:none;font-size:1rem;padding:15px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+  body{padding-bottom:80px}
 }
 
 /* ---------- Segnaposto foto ---------- */
-.ph{position:relative;overflow:hidden;background:var(--ph-a);max-width:100%;isolation:isolate}
+.ph{position:relative;overflow:hidden;background:var(--ph-a);max-width:100%;isolation:isolate;border-radius:clamp(18px,2.4vw,30px);transform:translateZ(0)}
+.hero .ph{border-radius:0}
 .ph::before{content:"";position:absolute;inset:-30%;z-index:-1;
   background:
     radial-gradient(60% 40% at 30% 70%, var(--ph-b), transparent 70%),
@@ -134,12 +138,12 @@ html.intro-on, html.intro-on body{overflow:hidden}
 
 
 /* ---------- Spaccatura: la pagina si strappa e sotto resta ferma una foto ---------- */
-.rift{position:relative;height:clamp(380px,78vh,820px);margin-top:200px;clip-path:inset(0);-webkit-clip-path:inset(0)}
+.rift{position:relative;height:clamp(380px,78vh,820px);margin-top:200px;margin-inline:max(28px,env(safe-area-inset-left,0px));clip-path:inset(0 round clamp(18px,2.4vw,30px));-webkit-clip-path:inset(0 round clamp(18px,2.4vw,30px))}
 .rift-bg{position:fixed;left:0;right:0;top:0;height:100vh;height:100lvh;z-index:-1;pointer-events:none}
 .rift-bg picture{display:block;width:100%;height:100%}
 .rift-bg img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:60% 55%;display:block}
-.rift::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 14px 22px -14px rgba(0,0,0,.45), inset 0 -14px 22px -14px rgba(0,0,0,.45)}
-@media (max-width:820px){.rift{height:64svh;margin-top:110px}.rift-bg img{object-position:50% 50%}}
+.rift::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
+@media (max-width:820px){.rift{height:64svh;margin-top:110px;margin-inline:var(--side-l) var(--side-r)}.rift-bg img{object-position:50% 50%}}
 
 /* ---------- 1. Hero ---------- */
 .hero{position:relative;height:100svh;min-height:520px;max-height:1000px;display:flex;align-items:flex-end;justify-content:center;color:var(--white);overflow:hidden}
@@ -205,6 +209,7 @@ html.intro-on, html.intro-on body{overflow:hidden}
 .trio h3{margin-top:10px}
 .trio p{font-size:.96rem;max-width:40ch}
 .trio a{font-size:.96rem;align-self:flex-start}
+.trio a.btn-book{font-size:.9rem;padding:9px 18px}
 .trio .ph{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .trio li:hover .ph{transform:scale(.985)}
 @media (max-width:820px){
@@ -422,13 +427,13 @@ footer .mk{width:40px;height:40px;margin-bottom:6px}
       <div class="ph photo reveal" data-slot="bistrot"><img data-i18n-alt="alt_c2" src="bistrot.jpg" srcset="bistrot-640.jpg 640w, bistrot.jpg 1280w" sizes="(max-width:820px) 90vw, 30vw" alt="Tavolo per due apparecchiato sotto un albero, con la ringhiera e il mare azzurro sullo sfondo" loading="lazy"></div>
       <h3 data-i18n="c2t">Il bistrot</h3>
       <p data-i18n="c2p">Tavoli all’ombra degli alberi, affacciati sull’acqua. La cucina parte dal pesce del golfo e dalle ricette liguri: piatti da dividere, senza fretta.</p>
-      <a href="https://wa.me/393516420126?text=Ciao%21%20Vorrei%20prenotare%20un%20tavolo%20alla%20Marinella." target="_blank" rel="noopener" data-wa data-i18n="c2a">Prenota</a>
+      <a class="btn-book" href="https://wa.me/393516420126?text=Ciao%21%20Vorrei%20prenotare%20un%20tavolo%20alla%20Marinella." target="_blank" rel="noopener" data-wa data-i18n="c2a">Prenota</a>
     </li>
     <li class="fade">
       <div class="ph photo reveal" data-slot="cocktail"><img data-i18n-alt="alt_c3" src="cocktail.jpg" srcset="cocktail-640.jpg 640w, cocktail.jpg 1280w" sizes="(max-width:820px) 90vw, 30vw" alt="Corridoio che porta alla sala scavata nella roccia, con ospiti ai tavoli e una bicicletta appoggiata" loading="lazy"></div>
       <h3 data-i18n="c3t">La sala nella roccia</h3>
       <p data-i18n="c3p">Una sala scavata nella scogliera, illuminata da poche luci calde. Fresca d’estate e raccolta la sera, è il posto più insolito del golfo per sedersi a tavola.</p>
-      <a href="https://wa.me/393516420126?text=Ciao%21%20Vorrei%20prenotare%20un%20tavolo%20alla%20Marinella." target="_blank" rel="noopener" data-wa data-i18n="c3a">Prenota</a>
+      <a class="btn-book" href="https://wa.me/393516420126?text=Ciao%21%20Vorrei%20prenotare%20un%20tavolo%20alla%20Marinella." target="_blank" rel="noopener" data-wa data-i18n="c3a">Prenota</a>
     </li>
   </ul>
 
