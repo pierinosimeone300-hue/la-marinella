@@ -187,12 +187,12 @@ html.intro-on, html.intro-on body{overflow:hidden}
 @keyframes rise{from{transform:translateY(18px)}to{transform:none}}
 
 /* ---------- 2. Immagine + citazione ---------- */
-.intro{margin-top:140px;display:grid;grid-template-columns:minmax(0,54%) 1fr;align-items:center;gap:clamp(32px,6vw,90px);padding-right:var(--side-r)}
+.intro{margin-top:150px;display:flex;justify-content:center;padding-left:var(--side-l);padding-right:var(--side-r)}
 .intro .ph{aspect-ratio:3/2}
-.intro .q{display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px;max-width:470px;justify-self:center}
-.intro blockquote{margin:0;font-size:clamp(1.55rem,2.4vw,2rem);font-weight:500;line-height:1.22;text-wrap:balance}
+.intro .q{display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px;max-width:640px}
+.intro blockquote{margin:0;font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:500;line-height:1.22;text-wrap:balance}
 .intro .hours{font-size:.92rem}
-@media (max-width:820px){.intro{grid-template-columns:1fr;margin-top:56px;padding-left:0;padding-right:0}.intro .q{padding-left:var(--side-l);padding-right:var(--side-r)}}
+@media (max-width:820px){.intro{margin-top:90px}}
 
 /* ---------- 3. Tre colonne sfalsate ---------- */
 .trio{margin-top:200px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,7vw,120px);align-items:start;padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px));list-style:none;margin-bottom:0}
@@ -405,7 +405,6 @@ footer .mk{width:40px;height:40px;margin-bottom:6px}
 
   <!-- 2 · IMMAGINE + CITAZIONE -->
   <section class="intro">
-    <div class="ph photo" data-slot="intro"><img data-i18n-alt="alt_in" src="intro.jpg" srcset="intro-1200.jpg 1200w, intro.jpg 2400w" sizes="(max-width:820px) 100vw, 54vw" alt="Il castello di San Terenzo sul promontorio e il golfo con Lerici sullo sfondo, incorniciati dalle fronde" loading="lazy"></div>
     <div class="q fade">
       <blockquote data-i18n="quote">“Tra il castello di San Terenzo e le scogliere del Golfo dei Poeti, un angolo di mare dove sono le onde a dettare il ritmo della giornata.”</blockquote>
       <p class="hours" data-i18n="hours">Aperto tutti i giorni, dalle 11:00 alle 23:00</p>
